@@ -1,4 +1,16 @@
 {
+  "name": "qiita-post-generator",
+  "version": "1.0.0",
+  "description": "Generate Qiita posts from clipboard with Gemini AI enhancement",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.0.3",
+    "yaml": "^2.2.1"
+  },
   "devDependencies": {
     "@qiita/qiita-cli": "^1.6.1"
   }
