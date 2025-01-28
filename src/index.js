@@ -37,27 +37,21 @@ async function main() {
         // 現在の日時を取得
         const now = new Date();
         
-        // フォルダパスの生成（YYYY/MM/DD/）
+        // 日時文字列の生成（YYYY-MM-DD-HHMMSS）
         const year = now.getFullYear();
         const month = String(now.getMonth() + 1).padStart(2, '0');
         const day = String(now.getDate()).padStart(2, '0');
-        const folderPath = path.join('public', String(year), month, day);
-
-        // 時分秒の取得（HHMMSS）
         const hours = String(now.getHours()).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
-        const timeStr = `${hours}${minutes}${seconds}`;
+        const dateTimeStr = `${year}-${month}-${day}-${hours}${minutes}${seconds}`;
 
-        // ファイル名の生成（HHMMSS-title.md）
+        // ファイル名の生成（YYYY-MM-DD-HHMMSS-title.md）
         const sanitizedTitle = enhanced.title.toLowerCase().replace(/\s+/g, '-');
-        const filename = `${timeStr}-${sanitizedTitle}.md`;
+        const filename = `${dateTimeStr}-${sanitizedTitle}.md`;
 
-        // フォルダが存在しない場合は作成
-        fs.mkdirSync(folderPath, { recursive: true });
-
-        // ファイルの保存
-        const fullPath = path.join(folderPath, filename);
+        // ファイルの保存（public直下）
+        const fullPath = path.join('public', filename);
         fs.writeFileSync(fullPath, article);
 
         // 完了報告
