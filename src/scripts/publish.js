@@ -38,23 +38,10 @@ async function focusOnGitHubActions() {
         runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Focus Current"\'');
         
         // エンターキーを押す
-        await sleep(200);
+        await sleep(1000);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
 
-        await sleep(200);
-        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
-
-        await sleep(5000);
-
-        // GitHub Actionsコマンドを入力
-        console.log('🆕 Refreshing on GitHub Actions...');
-        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Refresh Current"\'');
-        
-        // エンターキーを押す
-        await sleep(200);
-        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
-
-        await sleep(200);
+        await sleep(1000);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
 
         await sleep(5000);
@@ -64,23 +51,10 @@ async function focusOnGitHubActions() {
         runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Refresh Current"\'');
         
         // エンターキーを押す
-        await sleep(200);
+        await sleep(1000);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
 
-        await sleep(200);
-        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
-
-        await sleep(5000);
-
-        // GitHub Actionsコマンドを入力
-        console.log('🆕 Refreshing on GitHub Actions...');
-        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Refresh Current"\'');
-        
-        // エンターキーを押す
-        await sleep(200);
-        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
-
-        await sleep(200);
+        await sleep(1000);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
 
         await sleep(5000);
@@ -90,10 +64,10 @@ async function focusOnGitHubActions() {
         runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Refresh Current"\'');
         
         // エンターキーを押す
-        await sleep(200);
+        await sleep(1000);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
 
-        await sleep(200);
+        await sleep(1000);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
 
         await sleep(5000);
@@ -103,15 +77,38 @@ async function focusOnGitHubActions() {
         runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Refresh Current"\'');
         
         // エンターキーを押す
-        await sleep(200);
+        await sleep(1000);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
 
-        await sleep(200);
+        await sleep(1000);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
 
+        await sleep(5000);
 
-
+        // GitHub Actionsコマンドを入力
+        console.log('🆕 Refreshing on GitHub Actions...');
+        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Refresh Current"\'');
         
+        // エンターキーを押す
+        await sleep(1000);
+        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
+
+        await sleep(1000);
+        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
+
+        await sleep(5000);
+
+        // GitHub Actionsコマンドを入力
+        console.log('🆕 Refreshing on GitHub Actions...');
+        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Refresh Current"\'');
+        
+        // エンターキーを押す
+        await sleep(1000);
+        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
+
+        await sleep(1000);
+        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
+       
     } catch (error) {
         console.log('\n⚠️ Note: Could not automatically focus GitHub Actions tab');
         console.log('Please check the GitHub Actions tab manually');
