@@ -88,6 +88,21 @@
                 "reveal": "always",
                 "panel": "new"
             }
+        },
+        {
+            "label": "Git Push and Publish Qiita",
+            "type": "shell",
+            "command": "node",
+            "args": [
+                "${workspaceFolder}/src/scripts/publish.js"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
         }
     ],
     "inputs": [
