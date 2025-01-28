@@ -14,13 +14,31 @@ function runCommand(command) {
     }
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function focusOnGitHubActions() {
-    
-    runCommand('osascript -e \'tell application "System Events" to keystroke "p" using {command down, shift down}\'');
-    // コマンドパレットが開いた後に "GitHub Actions" と入力するのを少し待つ
-    setTimeout(() => {
-        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Show Workflows"\'');
-    }, 500);
+    try {
+        // コマンドパレットを開く
+        console.log('\n🎯 Opening command palette...');
+        runCommand('osascript -e \'tell application "System Events" to keystroke "p" using {command down, shift down}\'');
+        
+        // コマンドパレットが開くのを待つ
+        await sleep(800);
+        
+        // GitHub Actionsコマンドを入力（1文字ずつ）
+        console.log('🔍 Focusing on GitHub Actions...');
+        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Show Workflow Run"\'');
+        
+        // エンターキーを押す
+        await sleep(200);
+        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
+        
+    } catch (error) {
+        console.log('\n⚠️ Note: Could not automatically focus GitHub Actions tab');
+        console.log('Please check the GitHub Actions tab manually');
+    }
 }
 
 async function publish() {
@@ -47,12 +65,17 @@ async function publish() {
         console.log('\n✨ Publish complete!');
         console.log('GitHub Actions will start the Qiita publication process...');
         
+        // GitHub Actionsタブにフォーカス
         await focusOnGitHubActions();
-
+        
     } catch (error) {
         console.error('\n❌ Error during publish process:', error.message);
         process.exit(1);
     }
 }
 
-publish();
+// Promiseを適切に処理するためにasync/awaitを使用
+publish().catch(error => {
+    console.error('Unhandled error:', error);
+    process.exit(1);
+});
