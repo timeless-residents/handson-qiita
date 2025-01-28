@@ -20,16 +20,22 @@ function sleep(ms) {
 
 async function focusOnGitHubActions() {
     try {
+        // 英数キーを押して日本語入力モードをオフにする
+        console.log('\n⌨️  Disabling Japanese input...');
+        runCommand('osascript -e \'tell application "System Events" to key code 102\''); // 英数キー
+
+        await sleep(100);
+
         // コマンドパレットを開く
-        console.log('\n🎯 Opening command palette...');
+        console.log('🎯 Opening command palette...');
         runCommand('osascript -e \'tell application "System Events" to keystroke "p" using {command down, shift down}\'');
         
         // コマンドパレットが開くのを待つ
         await sleep(800);
         
-        // GitHub Actionsコマンドを入力（1文字ずつ）
+        // GitHub Actionsコマンドを入力
         console.log('🔍 Focusing on GitHub Actions...');
-        runCommand('osascript -e \'tell application "System Events" to keystroke "Github Actions: Focus on Current Branch View"\'');
+        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Focus on Current Branch View"\'');
         
         // エンターキーを押す
         await sleep(200);
