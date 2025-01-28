@@ -38,7 +38,7 @@ async function focusOnGitHubActions() {
         runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Focus Current"\'');
         
         // エンターキーを押す
-        await sleep(200);
+        await sleep(1000);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
         
     } catch (error) {
