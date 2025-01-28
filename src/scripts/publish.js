@@ -44,6 +44,20 @@ async function focusOnGitHubActions() {
         await sleep(200);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
 
+        await sleep(1000);
+
+        // GitHub Actionsコマンドを入力
+        console.log('🆕 Refreshing on GitHub Actions...');
+        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Refresh Current"\'');
+        
+        // エンターキーを押す
+        await sleep(200);
+        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
+
+        await sleep(200);
+        runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
+
+
         
     } catch (error) {
         console.log('\n⚠️ Note: Could not automatically focus GitHub Actions tab');
