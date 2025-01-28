@@ -44,7 +44,7 @@ async function focusOnGitHubActions() {
         await sleep(200);
         runCommand('osascript -e \'tell application "System Events" to key code 36\''); // 36はreturnキー
 
-        await sleep(1000);
+        await sleep(10000);
 
         // GitHub Actionsコマンドを入力
         console.log('🆕 Refreshing on GitHub Actions...');
