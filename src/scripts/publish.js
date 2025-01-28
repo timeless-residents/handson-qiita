@@ -14,7 +14,16 @@ function runCommand(command) {
     }
 }
 
-function publish() {
+async function focusOnGitHubActions() {
+    
+    runCommand('osascript -e \'tell application "System Events" to keystroke "p" using {command down, shift down}\'');
+    // コマンドパレットが開いた後に "GitHub Actions" と入力するのを少し待つ
+    setTimeout(() => {
+        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Show Workflows"\'');
+    }, 500);
+}
+
+async function publish() {
     console.log('🔄 Publishing process started...\n');
 
     try {
@@ -38,6 +47,8 @@ function publish() {
         console.log('\n✨ Publish complete!');
         console.log('GitHub Actions will start the Qiita publication process...');
         
+        await focusOnGitHubActions();
+
     } catch (error) {
         console.error('\n❌ Error during publish process:', error.message);
         process.exit(1);
