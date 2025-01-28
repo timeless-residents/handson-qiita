@@ -35,7 +35,7 @@ async function focusOnGitHubActions() {
         
         // GitHub Actionsコマンドを入力
         console.log('🔍 Focusing on GitHub Actions...');
-        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Focus on Current Branch View"\'');
+        runCommand('osascript -e \'tell application "System Events" to keystroke "GitHub Actions: Focus Current"\'');
         
         // エンターキーを押す
         await sleep(200);
