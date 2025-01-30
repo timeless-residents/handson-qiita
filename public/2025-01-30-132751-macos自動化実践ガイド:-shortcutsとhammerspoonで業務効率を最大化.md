@@ -1,14 +1,14 @@
 ---
-title: "MacOS自動化実践ガイド: ShortcutsとHammerspoonで業務効率を最大化"
+title: 'MacOS自動化実践ガイド: ShortcutsとHammerspoonで業務効率を最大化'
 tags:
-  - MacOS
+  - macOS
+  - 効率化
   - 自動化
   - Shortcuts
   - Hammerspoon
-  - 効率化
 private: false
-updated_at: "'2025-01-30T04:27:51.062Z'"
-id: null
+updated_at: '2025-01-30T13:35:02+09:00'
+id: f75d689f7ce9be16b3b2
 organization_url_name: null
 slide: false
 ignorePublish: false
