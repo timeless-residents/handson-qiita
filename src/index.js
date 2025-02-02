@@ -7,6 +7,13 @@ const { enhanceStructure } = require('./services/structureEnhancer');
 const { generateContent } = require('./services/contentGenerator');
 const { formatQiitaArticle } = require('./utils/qiitaFormatter');
 
+// Helper function to ensure directory exists
+function ensureDirectoryExists(dirPath) {
+    if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+    }
+}
+
 async function main() {
     if (!GEMINI_API_KEY) {
         console.error('環境変数 GEMINI_API_KEY が設定されていません。');
@@ -47,12 +54,21 @@ async function main() {
         const dateTimeStr = `${year}-${month}-${day}-${hours}${minutes}${seconds}`;
 
         // ファイル名の生成（YYYY-MM-DD-HHMMSS-title.md）
-        const sanitizedTitle = enhanced.title.toLowerCase().replace(/\s+/g, '-');
+        const sanitizedTitle = enhanced.title
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, '') // Remove special characters except hyphen
+            .replace(/\s+/g, '-')     // Replace spaces with hyphens
+            .replace(/-+/g, '-');     // Replace multiple hyphens with single hyphen
+
         const filename = `${dateTimeStr}-${sanitizedTitle}.md`;
 
-        // ファイルの保存（public直下）
-        const fullPath = path.join('public', filename);
-        fs.writeFileSync(fullPath, article);
+        // 出力ディレクトリの作成
+        const outputDir = path.join('public');
+        ensureDirectoryExists(outputDir);
+
+        // ファイルの保存
+        const fullPath = path.join(outputDir, filename);
+        fs.writeFileSync(fullPath, article, 'utf8');
 
         // 完了報告
         console.log('\n✨ Qiita記事を生成しました！');
