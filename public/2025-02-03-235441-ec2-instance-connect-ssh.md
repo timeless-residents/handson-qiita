@@ -2,13 +2,13 @@
 title: EC2 Instance Connect 徹底活用：SSH接続のセキュリティ強化と運用自動化
 tags:
   - EC2
-  - InstanceConnect
-  - セキュリティ
+  - Security
+  - 自動化
   - IAM
-  - 自動化 
+  - InstanceConnect
 private: false
-updated_at: "'2025-02-03T14:54:41.436Z'"
-id: null
+updated_at: '2025-02-03T23:57:03+09:00'
+id: 0c201471cc822f2dc8c9
 organization_url_name: null
 slide: false
 ignorePublish: false
