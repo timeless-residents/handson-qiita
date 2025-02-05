@@ -1,14 +1,14 @@
 ---
-title: "OpenCost & Datadog 実践ガイド: クラウドコスト最適化で無駄を削減する"
+title: 'OpenCost & Datadog 実践ガイド: クラウドコスト最適化で無駄を削減する'
 tags:
-  - OpenCost
+  - kubernetes
   - Datadog
   - クラウドコスト
-  - Kubernetes
   - コスト最適化
+  - OpenCost
 private: false
-updated_at: "'2025-02-05T22:46:29.591Z'"
-id: null
+updated_at: '2025-02-06T07:48:20+09:00'
+id: e7820664392fb7cc9ab3
 organization_url_name: null
 slide: false
 ignorePublish: false
