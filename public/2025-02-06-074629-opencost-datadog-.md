@@ -7,7 +7,7 @@ tags:
   - コスト最適化
   - OpenCost
 private: false
-updated_at: '2025-02-06T07:48:20+09:00'
+updated_at: '2025-02-07T07:24:09+09:00'
 id: e7820664392fb7cc9ab3
 organization_url_name: null
 slide: false
