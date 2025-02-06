@@ -14,7 +14,6 @@ slide: false
 ignorePublish: false
 ---
 
-```markdown
 # Microsoft Teams x Power Automate 実践ガイド：業務効率を劇的に向上させる自動化レシピ集
 
 この記事では、Microsoft TeamsとPower Automateを連携させることで、日々の業務を劇的に効率化する方法を解説します。ノーコードで実現できる簡単な自動化から、Power Automate Bot開発、アダプティブカードの活用、トラブルシューティングまで、具体的なレシピとコード例を交えながら、実践的な内容をお届けします。この記事を読むことで、あなたはTeamsを単なるコミュニケーションツールから、業務効率化のための強力なプラットフォームへと進化させることができるでしょう。
@@ -230,4 +229,3 @@ Teams自動化の未来は、Copilot Studioとの連携とAI活用によって�
 *   Adaptive Cards: [https://adaptivecards.io/](https://adaptivecards.io/)
 *   Microsoft Bot Framework Composer: [https://dev.botframework.com/](https://dev.botframework.com/)
 *   Microsoft Copilot Studio: [https://powerpages.microsoft.com/ja-jp/blog/introducing-microsoft-copilot-studio/](https://powerpages.microsoft.com/ja-jp/blog/introducing-microsoft-copilot-studio/)
-```
